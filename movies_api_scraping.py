@@ -23,7 +23,6 @@ def get_movies_by_list():
     with open("original_movie_plots_yts.csv",'w',newline='') as file:
         writer = csv.writer(file, delimiter=',')
         writer.writerow(["Title","Plot","Genres"]) #header
-
         
         for i in tqdm(range(7500)):
             res = requests.get("https://yts.mx/api/v2/list_movies.json?limit=50&page={}".format(i))
